@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>普高古文十五小老師</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="platform-header">
+    <div class="banner">
+        <img src="images/banner-bg.png" alt="古文十五小老師" class="banner-img">
+    </div>
+</div>
+
+        <div class="content-area">
+            <div class="books-view">
+                
+                <!-- 已開放的冊次 -->
+                <div class="volume-section unlocked">
+                    <div class="volume-header">
+   			 <h2 class="volume-title">第一冊</h2>
+			 </div>
+                    <div class="volume-books">
+                        <div class="book-item" data-url="pages/book1/book1.html">
+                            <div class="book-cover">
+                                <img src="images/book1.png" alt="桃花源記" class="book-image">
+                            </div>
+                            <div class="book-title">桃花源記</div>
+                        </div>
+                        <div class="book-item" data-url="pages/book2/book2.html">
+                            <div class="book-cover">
+                                <img src="images/book2.png" alt="師說" class="book-image">
+                            </div>
+                            <div class="book-title">師說</div>
+                        </div>
+                        <div class="book-item" data-url="pages/book3/book3.html">
+                            <div class="book-cover">
+                                <img src="images/book3.png" alt="項脊軒志" class="book-image">
+                            </div>
+                            <div class="book-title">項脊軒志</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="volume-section unlocked">
+                    <div class="volume-header">
+                        <h2 class="volume-title">第三冊</h2>
+                    </div>
+                    <div class="volume-books">
+                        <div class="book-item" data-url="pages/book6/book6.html">
+                            <div class="book-cover">
+                                <img src="images/book6.png" alt="出師表" class="book-image">
+                            </div>
+                            <div class="book-title">出師表</div>
+                        </div>
+                        <div class="book-item" data-url="pages/book7/book7.html">
+                            <div class="book-cover">
+                                <img src="images/book7.png" alt="勞山道士" class="book-image">
+                            </div>
+                            <div class="book-title">勞山道士</div>
+                        </div>
+                        <div class="book-item" data-url="pages/book8/book8.html">
+                            <div class="book-cover">
+                                <img src="images/book8.png" alt="赤壁賦" class="book-image">
+                            </div>
+                            <div class="book-title">赤壁賦</div>
+                        </div>
+                        <div class="book-item" data-url="pages/book9/book9.html">
+                            <div class="book-cover">
+                                <img src="images/book9.png" alt="燭之武退秦師" class="book-image">
+                            </div>
+                            <div class="book-title">燭之武退秦師</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="volume-section unlocked">
+                    <div class="volume-header">
+                        <h2 class="volume-title">第五冊</h2>
+                    </div>
+                    <div class="volume-books">
+                        <div class="book-item" data-url="pages/book14/book14.html">
+                            <div class="book-cover">
+                                <img src="images/book14.png" alt="鴻門宴" class="book-image">
+                            </div>
+                            <div class="book-title">鴻門宴</div>
+                        </div>
+                        <div class="book-item" data-url="pages/book15/book15.html">
+                            <div class="book-cover">
+                                <img src="images/book15.png" alt="勸和論" class="book-image">
+                            </div>
+                            <div class="book-title">勸和論</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 分隔線 -->
+                <div class="separator">
+                    <div class="separator-line"></div>
+                    <span class="separator-text">即將開放</span>
+                    <div class="separator-line"></div>
+                </div>
+
+                <!-- 鎖定的冊次 -->
+                <div class="volume-section locked">
+                    <div class="volume-header">
+                        <h2 class="volume-title">第二冊</h2>
+                        <span class="volume-status">即將開放</span>
+                    </div>
+                    <div class="volume-books">
+                        <div class="book-item locked">
+                            <div class="book-cover">
+                                <img src="images/book4.png" alt="晚遊六橋待月記" class="book-image">
+                                <span class="lock-icon">🔒</span>
+                            </div>
+                            <div class="book-title">晚遊六橋待月記</div>
+                        </div>
+                        <div class="book-item locked">
+                            <div class="book-cover">
+                                <img src="images/book5.png" alt="畫菊自序" class="book-image">
+                                <span class="lock-icon">🔒</span>
+                            </div>
+                            <div class="book-title">畫橘自序</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="volume-section locked">
+                    <div class="volume-header">
+                        <h2 class="volume-title">第四冊</h2>
+                        <span class="volume-status">即將開放</span>
+                    </div>
+                    <div class="volume-books">
+                        <div class="book-item locked">
+                            <div class="book-cover">
+                                <img src="images/book10.png" alt="大同與小康" class="book-image">
+                                <span class="lock-icon">🔒</span>
+                            </div>
+                            <div class="book-title">大同與小康</div>
+                        </div>
+                        <div class="book-item locked">
+                            <div class="book-cover">
+                                <img src="images/book11.png" alt="虬髯客傳" class="book-image">
+                                <span class="lock-icon">🔒</span>
+                            </div>
+                            <div class="book-title">虬髯客傳</div>
+                        </div>
+                        <div class="book-item locked">
+                            <div class="book-cover">
+                                <img src="images/book12.png" alt="諫逐客書" class="book-image">
+                                <span class="lock-icon">🔒</span>
+                            </div>
+                            <div class="book-title">諫逐客書</div>
+                        </div>
+                        <div class="book-item locked">
+                            <div class="book-cover">
+                                <img src="images/book13.png" alt="鹿港乘桴記" class="book-image">
+                                <span class="lock-icon">🔒</span>
+                            </div>
+                            <div class="book-title">鹿港乘桴記</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

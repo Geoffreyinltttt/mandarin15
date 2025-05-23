@@ -1,0 +1,427 @@
+/* 基本重置與全域設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    background: linear-gradient(135deg, #f4e6d3 0%, #deb887 100%);
+    min-height: 100%;
+}
+
+:root {
+    --safe-area-top: env(safe-area-inset-top, 0px);
+    --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+    --warm-gradient: linear-gradient(135deg, #f4e6d3 0%, #deb887 100%);
+    --book-shadow: 0 8px 20px rgba(139, 69, 19, 0.3);
+    --accent-brown: #8b4513;
+    --light-brown: #deb887;
+}
+
+body {
+    font-family: 'Noto Serif TC', serif;
+    background: var(--warm-gradient);
+    height: 100vh;
+    height: calc(100vh - var(--safe-area-top) - var(--safe-area-bottom));
+    color: var(--accent-brown);
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    padding-top: var(--safe-area-top);
+}
+
+.app-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.platform-header {
+    text-align: center;
+    padding: 1rem;
+    flex-shrink: 0;
+    margin-bottom: 1rem;
+}
+
+.banner {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.banner-img {
+    width: 100%;
+    height: auto;
+    max-height: 120px;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.banner-img:hover {
+    transform: scale(1.02);
+}
+
+.content-area {
+    position: relative;
+    flex-grow: 1;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(139, 69, 19, 0.1);
+}
+
+.books-view {
+    height: 100%;
+    overflow-y: auto;
+    padding: 1rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.books-view::-webkit-scrollbar {
+    display: none;
+}
+
+/* 冊次區段樣式 */
+.volume-section {
+    margin-bottom: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+.volume-section.locked {
+    opacity: 0.7;
+}
+
+.volume-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    border: 1px solid rgba(139, 69, 19, 0.2);
+}
+
+.volume-section.unlocked .volume-header {
+    background: rgba(139, 69, 19, 0.1);
+    border-color: rgba(139, 69, 19, 0.3);
+}
+
+.volume-section.locked .volume-header {
+    background: rgba(139, 69, 19, 0.05);
+    border-color: rgba(139, 69, 19, 0.15);
+}
+
+.volume-title {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--accent-brown);
+    letter-spacing: 0.05em;
+}
+
+.volume-status {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.volume-section.unlocked .volume-status {
+    background: rgba(34, 139, 34, 0.2);
+    color: #228b22;
+    border: 1px solid rgba(34, 139, 34, 0.3);
+}
+
+.volume-section.locked .volume-status {
+    background: rgba(139, 69, 19, 0.2);
+    color: rgba(139, 69, 19, 0.8);
+    border: 1px solid rgba(139, 69, 19, 0.3);
+}
+
+/* 書籍網格 */
+.volume-books {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+/* 書籍項目樣式 */
+.book-item {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.book-item.locked {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.book-cover {
+    width: 100%;
+    padding-bottom: 130%;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(139, 69, 19, 0.2);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.book-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.book-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--accent-brown);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+    letter-spacing: 0.02em;
+}
+
+/* 鎖定樣式 */
+.book-item.locked .book-cover {
+    filter: grayscale(60%) brightness(0.85);
+}
+
+.book-item.locked:hover .book-cover {
+    filter: grayscale(40%) brightness(0.95);
+    transform: translateY(-2px);
+}
+
+.lock-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.2em;
+    color: rgba(139, 69, 19, 0.9);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 18px;
+    border-radius: 50%;
+    animation: pulse 2.5s infinite;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+    border: 2px solid rgba(139, 69, 19, 0.2);
+}
+
+.book-item.locked::before {
+    content: '尚未開放';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    background: rgba(139, 69, 19, 0.9);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 20;
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.4);
+    font-weight: 500;
+}
+
+.book-item.locked:hover::before {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* 解鎖書籍懸停效果 */
+.book-item:not(.locked):hover {
+    transform: translateY(-8px);
+}
+
+.book-item:not(.locked):hover .book-cover {
+    box-shadow: var(--book-shadow);
+    transform: scale(1.02);
+}
+
+.book-item:not(.locked):hover .book-image {
+    transform: scale(1.05);
+}
+
+.book-item:not(.locked):hover .book-title {
+    color: #a0522d;
+    transform: translateY(-2px);
+}
+
+/* 分隔線樣式 */
+.separator {
+    display: flex;
+    align-items: center;
+    margin: 3rem 0;
+    opacity: 0.7;
+}
+
+.separator-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(139, 69, 19, 0.3), transparent);
+}
+
+.separator-text {
+    margin: 0 2rem;
+    padding: 0.5rem 1.5rem;
+    background: rgba(139, 69, 19, 0.1);
+    color: rgba(139, 69, 19, 0.8);
+    border-radius: 20px;
+    font-size: 1em;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    border: 1px solid rgba(139, 69, 19, 0.2);
+}
+
+/* 呼吸動畫 */
+@keyframes pulse {
+    0%, 100% { 
+        transform: translate(-50%, -50%) scale(1); 
+        opacity: 0.9; 
+    }
+    50% { 
+        transform: translate(-50%, -50%) scale(1.1); 
+        opacity: 0.7; 
+    }
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .banner-img {
+        border-radius: 10px;
+		max-height: 100px;
+    }
+    
+    .volume-books {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .volume-header {
+        padding: 0.8rem 1rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .volume-title {
+        font-size: 1.5em;
+    }
+
+    .book-cover {
+        padding-bottom: 140%;
+    }
+
+    .book-title {
+        font-size: 1em;
+        margin-top: 0.7rem;
+    }
+
+    .lock-icon {
+        font-size: 1.8em;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-container {
+        padding: 0.5rem;
+    }
+    
+    @media (max-width: 480px) {
+    .banner-img {
+        border-radius: 8px;
+		max-height: 80px;
+    }
+    
+    .volume-books {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .volume-header {
+        padding: 0.6rem 0.8rem;
+    }
+
+    .volume-title {
+        font-size: 1.3em;
+    }
+
+    .book-title {
+        font-size: 0.9em;
+        margin-top: 0.5rem;
+    }
+
+    .lock-icon {
+        font-size: 1.5em;
+        padding: 10px;
+    }
+
+    .separator-text {
+        margin: 0 1rem;
+        padding: 0.4rem 1rem;
+        font-size: 0.9em;
+    }
+}
+
+/* 無障礙設計 */
+@media (prefers-reduced-motion: reduce) {
+    .book-item,
+    .book-cover,
+    .book-image,
+    .lock-icon {
+        transition: none;
+        animation: none;
+    }
+}
+
+/* 大螢幕優化 */
+@media (min-width: 1024px) {
+    .volume-books {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 2rem;
+        justify-content: center;
+    }
+    
+    .app-container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 1440px) {
+    .volume-books {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 2.5rem;
+    }
+    
+    .platform-header {
+        padding: 2rem 1rem;
+    }
+}

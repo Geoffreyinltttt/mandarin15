@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>畫菊自序　張李德和</title>
+    <link rel="stylesheet" href="article-styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="banner-section">
+            <button class="back-button" onclick="window.location.href='book8.html'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5"/>
+                    <path d="M12 19l-7-7 7-7"/>
+                </svg>
+                <span>返回選文</span>
+            </button>
+            <div class="banner-content">
+                <h1 class="article-title">畫菊自序</h1>
+                <p class="article-author">張李德和</p>
+                <p class="article-period">1893-1972</p>
+            </div>
+        </header>
+            
+        <div class="content-area">
+            <div class="navigation-tabs">
+                <button class="nav-tab active" data-section="explain">課文概覽</button>
+                <button class="nav-tab" data-section="author">作者介紹</button>
+                <button class="nav-tab" data-section="content">詳細全文</button>
+            </div>
+
+            <div class="content-wrapper">
+                <!-- 課文概覽 -->
+                <div class="section-content active" id="explain-content">
+                    <div class="explain-text" style="display: none;">
+                        <div class="explain-section">
+                            <div class="explain-title">題解</div>
+                            <div class="explain-content">
+                                本文選自《張李德和詩文集》，旨在說明畫菊志趣，並展現作者追求藝術境界與品德操守的高遠志向。序，通「敘」，文體的一種，是為書籍、詩文、字畫所寫的文字，用以說明作品的旨趣、內容或創作緣由。
+                            </div>
+                            <div class="explain-content">
+                                作者在持家教子之餘，仍不忘精研詩文書畫，因仰慕陶淵明的高風亮節，特別欣賞他所愛的菊花，吟詩繪畫常以此為對象。民國三十九年秋，她畫了一幅菊花，上題「東籬爛熳見天真」。「東籬」出自陶淵明「採菊東籬下」詩句，代指菊花。本文即為這幅畫而作。
+                            </div>
+                            <div class="explain-content">
+                                本篇為駢文，以四字和六字的對偶句為主，整齊優美，聲律和諧，並援引典故，使內容更加豐富。全文彰顯畫作的深意，可說是文學與繪畫相互輝映的佳作。
+                            </div>
+                        </div>
+
+                        <div class="practice-button-container">
+                            <button id="showPracticeBtn" class="practice-button">理解測驗</button>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-section" style="display: none;">
+                        <div class="question-container" data-correct-option="C">
+                            <p class="question-text">(1) 本文的文體是什麼？</p>
+                            <div class="options-container">
+                                <button class="option-button" data-option="A">(A)散文</button>
+                                <button class="option-button" data-option="B">(B)律詩</button>
+                                <button class="option-button" data-option="C">(C)駢文</button>
+                            </div>
+                        </div>
+
+                        <div class="question-container" data-correct-option="B">
+                            <p class="question-text">(2) 作者畫菊的靈感來源是？</p>
+                            <div class="options-container">
+                                <button class="option-button" data-option="A">(A)李白的詩句</button>
+                                <button class="option-button" data-option="B">(B)陶淵明的高風亮節</button>
+                                <button class="option-button" data-option="C">(C)杜甫的詩句</button>
+                            </div>
+                        </div>
+
+                        <div class="question-container" data-correct-option="A">
+                            <p class="question-text">(3) 「東籬爛熳見天真」中的「東籬」是指什麼？</p>
+                            <div class="options-container">
+                                <button class="option-button" data-option="A">(A)菊花</button>
+                                <button class="option-button" data-option="B">(B)竹子</button>
+                                <button class="option-button" data-option="C">(C)梅花</button>
+                            </div>
+                        </div>
+
+                        <button id="checkAnswerBtn" class="check-answer-button" disabled>檢查答案</button>
+                        <div class="answer-section" style="display: none;">
+                            <div class="answer-result">
+                                <p class="result-text"></p>
+                                <p class="correct-answer"></p>
+                                <p class="answer-explanation"></p>
+                            </div>
+                        </div>
+                        <button class="close-practice-button" style="display: none;">關閉</button>
+                    </div>
+                </div>
+
+                <!-- 作者介紹 -->
+                <div class="section-content" id="author-content">
+                    <div class="author-text" style="display: none;">
+                        <h2 class="section-title">作者</h2>
+                        <div class="author-section" style="background-color: #FFF8DC; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                            <div class="author-content">
+                                <strong>張李德和</strong><br>
+                                字號：本名李德和，結婚後冠夫姓，改為張李德和。字連玉，號羅山女史、題襟亭主人、琳瑯山閣主人<br>
+                                籍貫：雲林<br>
+                                生：清德宗光緒十九年（一八九三）<br>
+                                卒：民國六十一年<br>
+                                年：八十
+                            </div>
+                        </div>
+
+                        <div class="author-section" style="background-color: #FFFFFF; padding: 20px; border-radius: 8px;">
+                            <div class="author-content">
+                                <p>張李德和自幼學習漢文，十五歲入臺灣總督府國語學校第二附屬學校（今臺北市立中山女子高級中學）就讀，畢業後擔任公學校教師。二十歲結婚，其後夫婿在嘉義開業行醫，她辭去教職，協助處理醫院事務。平日熱愛藝文活動，曾組詩會、書畫會等社團，並積極參與公共事務，尤其重視爭取女性權益，曾擔任嘉義救濟院董事長、臺灣省臨時省議會第一屆省議員等職。</p>
+                                <p>張李德和多才多藝，擅長詩文書畫。其詩數量可觀，題材多樣，並謹守格律，用語工巧。其文以實用為主，字詞精鍊，句式整齊，風格典雅。其畫多繪花鳥，尤愛菊、蘭，畫風優雅。為臺灣相當具有代表性的女性詩人及畫家。有《張李德和詩文集》、《張李德和書畫集》傳世。</p>
+                            </div>
+                        </div>
+
+                        <div class="practice-button-container">
+                            <button id="showAuthorPracticeBtn" class="practice-button">理解測驗</button>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-section" style="display: none;">
+                        <div class="question-container" data-correct-options="ABC">
+                            <p class="question-text">張李德和擅長哪些藝術領域？（可複選）</p>
+                            <div class="options-container">
+                                <button class="option-button multi-select" data-option="A">(A)詩</button>
+                                <button class="option-button multi-select" data-option="B">(B)文</button>
+                                <button class="option-button multi-select" data-option="C">(C)書畫</button>
+                                <button class="option-button multi-select" data-option="D">(D)音樂</button>
+                            </div>
+                        </div>
+
+                        <button id="checkAuthorAnswerBtn" class="check-answer-button">檢查答案</button>
+                        <div class="answer-section" style="display: none;">
+                            <div class="answer-result">
+                                <p class="result-text"></p>
+                                <p class="correct-answer"></p>
+                                <p class="answer-explanation"></p>
+                            </div>
+                        </div>
+                        <button class="close-practice-button" style="display: none;">關閉</button>
+                    </div>
+                </div>
+
+                <!-- 詳細全文 -->
+                <div class="section-content" id="content-content">
+                    <div class="content-text" style="display: none;">
+                        <h2 class="section-title">全文分段</h2>
+                        
+                        <!-- 第一段課文區塊 -->
+                        <div class="content-section">
+                            <div class="content-number">1</div>
+                            <div class="content-controls">
+                                <button class="content-button analysis-button">段旨</button>
+                            </div>
+                            <div class="content-main">
+                                <div class="content-paragraph">
+                                    人為萬物之靈，志有萬端之異。學琴學詩，均從所好；工書工畫，各有專長。是故咳唾珠玉，謫仙闢詩學之源；節奏鏗鏘，蔡女撰胡笳之拍。此皆不墮聰明，而有志竟成者也。
+                                </div>
+
+                                <div class="analysis-content" style="display: none;">
+                                    <div class="analysis-title">段旨</div>
+                                    <div class="analysis-text">
+                                        說明人各有不同志趣，只要有志向、有才能，都能在各自專長領域中有所成就。以李白詩才、蔡文姬音樂才能為例，強調「有志竟成」的道理。
+                                    </div>
+                                </div>
+
+                                <div class="practice-button-container" style="text-align: left;">
+                                    <button class="practice-button">理解測驗</button>
+                                </div>
+
+                                <div class="practice-section" style="display: none;">
+                                    <div class="question-container" data-correct-option="B">
+                                        <p class="question-text">(1) 「謫仙」是指誰？</p>
+                                        <div class="options-container">
+                                            <button class="option-button" data-option="A">(A)杜甫</button>
+                                            <button class="option-button" data-option="B">(B)李白</button>
+                                            <button class="option-button" data-option="C">(C)陶淵明</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="question-container" data-correct-option="C">
+                                        <p class="question-text">(2) 「蔡女」是指誰？</p>
+                                        <div class="options-container">
+                                            <button class="option-button" data-option="A">(A)蔡琰</button>
+                                            <button class="option-button" data-option="B">(B)蔡邕</button>
+                                            <button class="option-button" data-option="C">(C)蔡文姬</button>
+                                        </div>
+                                    </div>
+
+                                    <button id="checkContentAnswersBtn" class="check-answer-button" disabled>檢查答案</button>
+                                    <div class="answer-section" style="display: none;">
+                                        <div class="answer-result">
+                                            <p class="result-text"></p>
+                                            <p class="correct-answer"></p>
+                                            <p class="answer-explanation"></p>
+                                        </div>
+                                    </div>
+                                    <button class="close-practice-button" style="display: none;">關閉</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 第二段課文區塊 -->
+                        <div class="content-section">
+                            <div class="content-number">2</div>
+                            <div class="content-controls">
+                                <button class="content-button analysis-button">段旨</button>
+                            </div>
+                            <div class="content-main">
+                                <div class="content-paragraph">
+                                    若夫銀鉤鐵畫，固屬難窺；儷白妃青，亦非易事。余因停機教子之餘，調藥助夫之暇，竊慕管夫人之墨竹，紙上生風；敢藉陶彭澤之黃花，圖中寫影。庶幾秋姿不老，四座流芳；得比勁節長垂，千人共仰。竟率意而鴉塗，莫自知其鳩拙云爾。
+                                </div>
+
+                                <div class="analysis-content" style="display: none;">
+                                    <div class="analysis-title">段旨</div>
+                                    <div class="analysis-text">
+                                        作者謙稱自己書畫技藝不精，但在家庭生活之餘，仰慕管道昇畫竹、陶淵明愛菊的高雅情操，希望藉由畫菊來表達自己對高潔品格的追求，展現君子節操的永恆價值。
+                                    </div>
+                                </div>
+
+                                <div class="practice-button-container" style="text-align: left;">
+                                    <button class="practice-button">理解測驗</button>
+                                </div>
+
+                                <div class="practice-section" style="display: none;">
+                                    <div class="question-container" data-correct-option="A">
+                                        <p class="question-text">(1) 「管夫人」是指誰？</p>
+                                        <div class="options-container">
+                                            <button class="option-button" data-option="A">(A)管道昇</button>
+                                            <button class="option-button" data-option="B">(B)管仲夫人</button>
+                                            <button class="option-button" data-option="C">(C)管寧夫人</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="question-container" data-correct-option="B">
+                                        <p class="question-text">(2) 「陶彭澤」是指誰？</p>
+                                        <div class="options-container">
+                                            <button class="option-button" data-option="A">(A)陶侃</button>
+                                            <button class="option-button" data-option="B">(B)陶淵明</button>
+                                            <button class="option-button" data-option="C">(C)陶弘景</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="question-container" data-correct-options="AB">
+                                        <p class="question-text">(3) 作者從事哪些家庭工作？（可複選）</p>
+                                        <div class="options-container">
+                                            <button class="option-button multi-select" data-option="A">(A)教子</button>
+                                            <button class="option-button multi-select" data-option="B">(B)調藥助夫</button>
+                                            <button class="option-button multi-select" data-option="C">(C)經商</button>
+                                        </div>
+                                    </div>
+
+                                    <button id="checkContentAnswersBtn" class="check-answer-button" disabled>檢查答案</button>
+                                    <div class="answer-section" style="display: none;">
+                                        <div class="answer-result">
+                                            <p class="result-text"></p>
+                                            <p class="correct-answer"></p>
+                                            <p class="answer-explanation"></p>
+                                        </div>
+                                    </div>
+                                    <button class="close-practice-button" style="display: none;">關閉</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 結尾署名 -->
+                        <div class="content-section">
+                            <div class="content-number">3</div>
+                            <div class="content-main">
+                                <div class="content-paragraph signature">
+                                    庚寅仲秋<br>
+                                    題襟亭主人張李德和
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="article-script.js"></script>
+</body>
+</html>

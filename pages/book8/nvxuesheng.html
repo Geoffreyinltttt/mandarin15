@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>女學生　陳黃金川</title>
+    <link rel="stylesheet" href="article-styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="banner-section">
+            <button class="back-button" onclick="window.location.href='book8.html'">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 12H5"/>
+                    <path d="M12 19l-7-7 7-7"/>
+                </svg>
+                <span>返回選文</span>
+            </button>
+            <div class="banner-content">
+                <h1 class="article-title">女學生</h1>
+                <p class="article-author">陳黃金川</p>
+                <p class="article-period">1907-1990</p>
+            </div>
+        </header>
+            
+        <div class="content-area">
+            <div class="navigation-tabs">
+                <button class="nav-tab active" data-section="explain">課文概覽</button>
+                <button class="nav-tab" data-section="author">作者介紹</button>
+                <button class="nav-tab" data-section="content">詳細全文</button>
+            </div>
+
+            <div class="content-wrapper">
+                <!-- 課文概覽 -->
+                <div class="section-content active" id="explain-content">
+                    <div class="explain-text" style="display: none;">
+                        <div class="explain-section">
+                            <div class="explain-title">題解</div>
+                            <div class="explain-content">
+                                本詩選自《金川詩草》，為七言律詩，旨在抒寫作者跳脫傳統對女性的限制，立志讀書，期許發揮天賦才能，有所作為。女學生，此為作者的自稱。
+                            </div>
+                            <div class="explain-content">
+                                臺灣傳統社會，女子大都只能困守閨閣，鮮有機會接受教育。作者十五歲時，赴日本東京的高等女校讀書，在學期間，她為了激勵自己，於是以詩抒發懷抱。
+                            </div>
+                            <div class="explain-content">
+                                詩中透過女性居處的狹隘空間與外面的寬廣世界，呈現強烈對比，寫出鷹揚萬里的志氣。首尾以設問方式，前呼後應，中間兩聯對仗精巧，顯現作者的才華。
+                            </div>
+                        </div>
+
+                        <div class="practice-button-container">
+                            <button id="showPracticeBtn" class="practice-button">理解測驗</button>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-section" style="display: none;">
+                        <div class="question-container" data-correct-option="B">
+                            <p class="question-text">(1) 本詩的詩體是什麼？</p>
+                            <div class="options-container">
+                                <button class="option-button" data-option="A">(A)五言律詩</button>
+                                <button class="option-button" data-option="B">(B)七言律詩</button>
+                                <button class="option-button" data-option="C">(C)七言絕句</button>
+                            </div>
+                        </div>
+
+                        <div class="question-container" data-correct-option="A">
+                            <p class="question-text">(2) 詩中主要的對比是什麼？</p>
+                            <div class="options-container">
+                                <button class="option-button" data-option="A">(A)狹隘空間與寬廣世界</button>
+                                <button class="option-button" data-option="B">(B)古代與現代</button>
+                                <button class="option-button" data-option="C">(C)中國與日本</button>
+                            </div>
+                        </div>
+
+                        <div class="question-container" data-correct-option="C">
+                            <p class="question-text">(3) 作者求學的地點是？</p>
+                            <div class="options-container">
+                                <button class="option-button" data-option="A">(A)臺灣</button>
+                                <button class="option-button" data-option="B">(B)中國大陸</button>
+                                <button class="option-button" data-option="C">(C)日本東京</button>
+                            </div>
+                        </div>
+
+                        <button id="checkAnswerBtn" class="check-answer-button" disabled>檢查答案</button>
+                        <div class="answer-section" style="display: none;">
+                            <div class="answer-result">
+                                <p class="result-text"></p>
+                                <p class="correct-answer"></p>
+                                <p class="answer-explanation"></p>
+                            </div>
+                        </div>
+                        <button class="close-practice-button" style="display: none;">關閉</button>
+                    </div>
+                </div>
+
+                <!-- 作者介紹 -->
+                <div class="section-content" id="author-content">
+                    <div class="author-text" style="display: none;">
+                        <h2 class="section-title">作者</h2>
+                        <div class="author-section" style="background-color: #FFF8DC; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
+                            <div class="author-content">
+                                <strong>陳黃金川</strong><br>
+                                本名：黃金川，結婚後冠夫姓，改為陳黃金川<br>
+                                籍貫：臺南<br>
+                                生：日治時期明治四十年（一九○七）<br>
+                                卒：民國七十九年<br>
+                                年：八十四
+                            </div>
+                        </div>
+
+                        <div class="author-section" style="background-color: #FFFFFF; padding: 20px; border-radius: 8px;">
+                            <div class="author-content">
+                                <p>陳黃金川出身富裕家庭，周歲喪父，由母親獨自撫育成人，受母親有意栽培，自幼涵泳傳統詩詞漢文。十五歲時，隨母、兄赴日本東京，就讀精華高等女學校。畢業返臺之後，更致力學習漢詩，經常參與詩社活動，在日治時期古典詩壇上占有一席之地。</p>
+                                <p>陳黃金川擅長近體詩，以七言絕句居多。詩作內容豐富，涵蓋個人、親友，乃至國家民族，風格清新淡雅，時時流露溫婉的性情。今有《金川詩草》傳世。</p>
+                            </div>
+                        </div>
+
+                        <div class="practice-button-container">
+                            <button id="showAuthorPracticeBtn" class="practice-button">理解測驗</button>
+                        </div>
+                    </div>
+                    
+                    <div class="practice-section" style="display: none;">
+                        <div class="question-container" data-correct-option="A">
+                            <p class="question-text">陳黃金川最擅長的詩體是？</p>
+                            <div class="options-container">
+                                <button class="option-button" data-option="A">(A)七言絕句</button>
+                                <button class="option-button" data-option="B">(B)五言律詩</button>
+                                <button class="option-button" data-option="C">(C)古體詩</button>
+                                <button class="option-button" data-option="D">(D)詞</button>
+                            </div>
+                        </div>
+
+                        <button id="checkAuthorAnswerBtn" class="check-answer-button">檢查答案</button>
+                        <div class="answer-section" style="display: none;">
+                            <div class="answer-result">
+                                <p class="result-text"></p>
+                                <p class="correct-answer"></p>
+                                <p class="answer-explanation"></p>
+                            </div>
+                        </div>
+                        <button class="close-practice-button" style="display: none;">關閉</button>
+                    </div>
+                </div>
+
+                <!-- 詳細全文 -->
+                <div class="section-content" id="content-content">
+                    <div class="content-text" style="display: none;">
+                        <h2 class="section-title">詩句賞析</h2>
+                        
+                        <!-- 首聯 -->
+                        <div class="content-section">
+                            <div class="content-number">首聯</div>
+                            <div class="content-controls">
+                                <button class="content-button analysis-button">賞析</button>
+                            </div>
+                            <div class="content-main">
+                                <div class="content-paragraph poem-verse">
+                                    詎甘繡閣久埋頭？<br>
+                                    負笈京師萬里遊。
+                                </div>
+
+                                <div class="analysis-content" style="display: none;">
+                                    <div class="analysis-title">賞析</div>
+                                    <div class="analysis-text">
+                                        以設問句起筆，表達不甘於只在閨閣中度日的心志。「詎甘」反問語氣強烈，「負笈京師萬里遊」寫出求學的壯志和行動，與「繡閣久埋頭」形成對比。
+                                    </div>
+                                </div>
+
+                                <div class="practice-button-container" style="text-align: left;">
+                                    <button class="practice-button">理解測驗</button>
+                                </div>
+
+                                <div class="practice-section" style="display: none;">
+                                    <div class="question-container" data-correct-option="C">
+                                        <p class="question-text">(1) 「詎甘」的語氣是？</p>
+                                        <div class="options-container">
+                                            <button class="option-button" data-option="A">(A)肯定</button>
+                                            <button class="option-button" data-option="B">(B)疑問</button>
+                                            <button class="option-button" data-option="C">(C)反問</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="question-container" data-correct-option="B">
+                                        <p class="question-text">(2) 「負笈」是指什麼？</p>
+                                        <div class="options-container">
+                                            <button class="option-button" data-option="A">(A)背負重物</button>
+                                            <button class="option-button" data-option="B">(B)背著書箱求學</button>
+                                            <button class="option-button" data-option="C">(C)肩負責任</button>
+                                        </div>
+                                    </div>
+
+                                    <button id="checkContentAnswersBtn" class="check-answer-button" disabled>檢查答案</button>
+                                    <div class="answer-section" style="display: none;">
+                                        <div class="answer-result">
+                                            <p class="result-text"></p>
+                                            <p class="correct-answer"></p>
+                                            <p class="answer-explanation"></p>
+                                        </div>
+                                    </div>
+                                    <button class="close-practice-button" style="display: none;">關閉</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- 頷聯 -->
+                        <div class="content-section">
+                            <div class="content-number">頷聯</div>
+                            <div class="content-controls">
+                                <button class="content-button analysis-button">賞析</button>
+                            </div>
+                            <div class="content-main">
+                                <div class="content-paragraph poem-verse">
+                                    雌伏胸愁無點墨，<br>
+                                    雄飛跡可遍寰球。
+                                </div>
+
+                                <div class="analysis-content" style="display: none;">
+                                    <div class="analysis-title">賞析</div>
+                                    <div class="analysis-text">
+                                        對仗工整，「雌伏」對「雄飛」，「胸愁」對「跡可」，「無點墨」對「遍寰球」。以雌雄對比喻示女性受限與男性自由的差別，表達對平等機會的渴望。
+                                    </div>
+                                </div>
+
+                                <div class="practice-button-container" style="text-align: left;">
+                                    <button class="practice-button">理解測驗</button>
+                                </div>
+
+                                <div class="practice-section" style="display: none;">
+                                    <div class="question-container" data-correct-option="A">
+                                        <p class="question-text">(1) 「雌伏」與「雄飛」形成什麼關係？</p>
+                                        <div class="options-container">
+                                            <button class="option-button" data-option="A">(A)對比</button>
+                                            <button class="option-button" data-option="B">(B)並列</button>
+                                            <button class="option-button" data-option="C">(C)因果</button>
+                                        </div>
+                                    </div>
+
+                                    <button id="checkContentAnswersBtn" class="check-answer-button" disabled>檢查答案</button>
+                                    <div class="answer-section" style="display: none;">
+                                        <div class="answer-result">
+                                            <p class="result-text"></p>
+                                            <p class="correct-answer"></p>
+                                            <p class="answer-explanation"></p>
+                                        </div>
+                                    </div>
+                                    <button class="close-practice-button" style="display: none;">關閉</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 頸聯 -->
+                        <div class="content-section">
+                            <div class="content-number">頸聯</div>
+                            <div class="content-controls">
+                                <button class="content-button analysis-button">賞析</button>
+                            </div>
+                            <div class="content-main">
+                                <div class="content-paragraph poem-verse">
+                                    書深莫被文明誤，<br>
+                                    學苦須從哲理求。
+                                </div>
+
+                                <div class="analysis-content" style="display: none;">
+                                    <div class="analysis-title">賞析</div>
+                                    <div class="analysis-text">
+                                        勉勵自己在學習中要有正確的態度和方法。「莫被文明誤」警惕不要被表面的文明所迷惑，「須從哲理求」強調要深入思考，追求真理。
+                                    </div>
+                                </div>
+
+                                <div class="practice-button-container" style="text-align: left;">
+                                    <button class="practice-button">理解測驗</button>
+                                </div>
+
+                                <div class="practice-section" style="display: none;">
+                                    <div class="question-container" data-correct-option="B">
+                                        <p class="question-text">(1) 作者認為學習應該從何處著手？</p>
+                                        <div class="options-container">
+                                            <button class="option-button" data-option="A">(A)文明</button>
+                                            <button class="option-button" data-option="B">(B)哲理</button>
+                                            <button class="option-button" data-option="C">(C)書本</button>
+                                        </div>
+                                    </div>
+
+                                    <button id="checkContentAnswersBtn" class="check-answer-button" disabled>檢查答案</button>
+                                    <div class="answer-section" style="display: none;">
+                                        <div class="answer-result">
+                                            <p class="result-text"></p>
+                                            <p class="correct-answer"></p>
+                                            <p class="answer-explanation"></p>
+                                        </div>
+                                    </div>
+                                    <button class="close-practice-button" style="display: none;">關閉</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 尾聯 -->
+                        <div class="content-section">
+                            <div class="content-number">尾聯</div>
+                            <div class="content-controls">
+                                <button class="content-button analysis-button">賞析</button>
+                            </div>
+                            <div class="content-main">
+                                <div class="content-paragraph poem-verse">
+                                    安得女權平等日，<br>
+                                    漫將天賦付東流？
+                                </div>
+
+                                <div class="analysis-content" style="display: none;">
+                                    <div class="analysis-title">賞析</div>
+                                    <div class="analysis-text">
+                                        以設問句收束，與首聯呼應。「安得女權平等日」表達對性別平等的期盼，「漫將天賦付東流？」反問語氣，強調不能浪費天賦才能，要積極爭取平等機會。
+                                    </div>
+                                </div>
+
+                                <div class="practice-button-container" style="text-align: left;">
+                                    <button class="practice-button">理解測驗</button>
+                                </div>
+
+                                <div class="practice-section" style="display: none;">
+                                    <div class="question-container" data-correct-option="A">
+                                        <p class="question-text">(1) 「安得」表達什麼語氣？</p>
+                                        <div class="options-container">
+                                            <button class="option-button" data-option="A">(A)期盼</button>
+                                            <button class="option-button" data-option="B">(B)懷疑</button>
+                                            <button class="option-button" data-option="C">(C)肯定</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="question-container" data-correct-option="C">
+                                        <p class="question-text">(2) 全詩的主旨是什麼？</p>
+                                        <div class="options-container">
+                                            <button class="option-button" data-option="A">(A)讚美學校教育</button>
+                                            <button class="option-button" data-option="B">(B)描寫留學生活</button>
+                                            <button class="option-button" data-option="C">(C)爭取女權平等</button>
+                                        </div>
+                                    </div>
+
+                                    <button id="checkContentAnswersBtn" class="check-answer-button" disabled>檢查答案</button>
+                                    <div class="answer-section" style="display: none;">
+                                        <div class="answer-result">
+                                            <p class="result-text"></p>
+                                            <p class="correct-answer"></p>
+                                            <p class="answer-explanation"></p>
+                                        </div>
+                                    </div>
+                                    <button class="close-practice-button" style="display: none;">關閉</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="article-script.js"></script>
+</body>
+</html>
